@@ -16,6 +16,78 @@
   <a href = "https://ubuntu.com/download/desktop">Ubuntu(24.04.3 LTS)</a>
 </p1>
 
+<h2>Linux</h2>
+  <h3>VM(server端): </h3>
+    <p1>
+      //目前使用橋接模式<br/>
+      netstat:<br/>
+      2.netstat -a   //顯示所有網路連線的服務<br/>
+      3.netstat -at  //列出TCP的連接埠,au為列出UDP的<br/>
+      4.netstat -l   //顯示所有listen狀態的連接埠，lt、lu同上<br/>
+      5.netstat -s   //顯示所有協定的統計數據，st、su同上，sw為更詳細<br/>
+      6.netstat -p   // 顯示使用網路的Process，pt、pu同上
+      7.netstat -an  //代表不要解析DNS、連接埠名稱、使用者名稱，加速執行速度<br/>
+      8.netstat -a --numeric-port //單獨指定不要的項目port、host、user<br/>
+      9.netstat -ct  //加上-c是每隔一秒輸出一次最新的資訊，也能用watch -n 1 netstat -t做到<br/>
+      10.netstat -r  //Routing Table，和route輸出相同<br/>
+      11.netstat -i  //顯示系統中每個網路介面資訊，比較詳細用ie(=ifconfig)<br/>
+      12.watch -d -n0 "netstat -atnp | grep ESTA" // 即時監控使用中的連線資訊可用WATCH<br/>
+      13.netstat -tup -W //列出完整的URL位址<br/>
+      14.netstat -lx  //目前listen的連接埠(查看本機服務)<br/>
+      
+                        <br/>//可以配合grep找出特定程式所使用的連接埠//<br/>
+      ex1.netstat -al|grep 'ssh'              //在這台電腦用ssh連線的ap?user?ip?port?service?<br/>
+      ex2.netstat -al|grep -i 'established'   //-i是過濾後面的大小寫 ,整句是查詢有誰連到這台機器上<br/>
+
+      
+      4.hostname -I  //查看自己IP, ip addr show也可以做到且有更詳細的網路資訊<br/>
+    </p1>
+
+  <h3>Host(Client端)</h3>
+    <p1>
+      1.ssh [username]@[要連的電腦IP]  //要檢查防火牆<br/>
+    </p1>
+
+
+  <h3>對於移動</h3>
+  <p1>
+    1. cd [folder/path] 進入 //cd ~(主頁面)、/(根目錄)、..(上一層)、.(目前位置) <br/> 
+    2. ls //列出當前資料夾的所有檔案<br/>
+    3. pwd //查看當前路徑<br/>
+  </p1>
+  
+  
+  <h3>對於檔案</h3>
+    <p1>
+      1. vi、vim [檔案名稱] 後 按"a" or "i" 進入編輯模式 
+      //修改檔案內容；完成後按ESC;輸入":";輸入w(wirte 確定寫入);輸入q(quite 保存後離開);q!為強制退出<br/>
+      2. echo [Message] '>' 或 '>>' [file name] //'>'為覆蓋先前資料改成輸入的資料，'>>'為在最後加上Message
+      //echo是讓電腦重複我輸入的內容 ex.Echo hello 就會將hello原封不動輸入<br/>
+      3. cat、more、head、tail  [file name] //查看文字檔內容，分別為快速查看、慢速查看、看前十行、看尾十行<br/>
+      4. touch [file name] //創建新檔<br/>
+      5. gedit [file name] //用記事本開啟檔案<br/>
+      6. mkdir [file name] //(make directory)建立新資料夾<br/>
+      7. cp [original path][new path] //複製檔案至新地方<br/>
+      8. cp -r [original path][new path] //複製資料夾 (r是recursive)<br/>
+      9. rm [file name] //刪除檔案remove<br/>
+      10. rm -r [file name] //刪除資料夾<br/>
+      11. mv [original file name][new file name] //將檔案移至資料夾 或是 改檔名<br/>
+    </p1>
+
+  <h3>對於已打開程式</h3>
+    <p1>
+      1.Ctrl + C 跳出<br/>
+      2.Ctrl + Z 暫停<br/>
+      //fg叫回前景 bg推至背景<br/>
+    </p1>
+
+  
+  目前遇到的問題:
+  1.無法開始火狐瀏覽器 (environment、display no found) // 10/29<br/>
+  2.目前只能使用橋接模式才能client連上server，NAT模式不行<br/>
+
+
+
 
 <h2>Python3</h2>
 <p2>
@@ -23,6 +95,5 @@
   ※指標部分與C大致上相同<br/>
 </p2>
 <p1>
-  function()-> 指定型態: <br/>
-  
+  1.function()-> 指定型態: <br/>
 </p1>
