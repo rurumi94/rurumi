@@ -43,7 +43,15 @@
       4.hostname -I  //查看自己IP, ip addr show也可以做到且有更詳細的網路資訊<br/>
     </p1>
 
-  <h3>Host(Client端)</h3>
+
+  <h3>Ps(Process status)</h3>
+    <p1>
+      <a href="https://ithelp.ithome.com.tw/m/articles/10201099">ps</a>、
+      <a href="https://blog.csdn.net/weixin_42338901/article/details/130846988">ps aux</a>
+    </p1>
+
+
+  <h3>Host連線(Client端)</h3>
     <p1>
       1.ssh [username]@[要連的電腦IP]  //要檢查防火牆<br/>
     </p1>
@@ -52,7 +60,7 @@
   <h3>對於移動</h3>
   <p1>
     1. cd [folder/path] 進入 //cd ~(主頁面)、/(根目錄)、..(上一層)、.(目前位置) <br/> 
-    2. ls //列出當前資料夾的所有檔案<br/>
+    2. <a href = "https://blog.csdn.net/cgzhello1/article/details/7839534">ls</a> //列出當前資料夾的所有檔案<br/>
     3. pwd //查看當前路徑<br/>
   </p1>
   
@@ -81,11 +89,30 @@
       //fg叫回前景 bg推至背景<br/>
     </p1>
 
-  
+  <h3>對於權限</h3>
+    <p1>
+      1.sudo -i/-s //-i會提供一個相同環境的shell，但升到root權限;-s會切換root權限，並保留當前環境變數<br/>
+      2.exit 退出root模式、ctrl+D(快捷)也可以<br/>
+    </p1>
+
+  <h3>SELinux</h3>
+    <h4>提供一個靈活的MAC機制</h4>
+      <p1>文獻: <a href = "https://linux.vbird.org/linux_server/rocky9/0140selinux.php">鳥哥</a>、<a href = "https://blog.csdn.net/u011630575/article/details/52054720">CSDN千尋、</a>
+          <a href = "https://blog.csdn.net/MyArrow/article/details/9856095">CSDN_Arrow_深入理解</a>      
+      </p1>
+  <h3><a href = "https://dywang.csie.cyut.edu.tw/dywang/rhel7/node70.html">Chorny & Chornyd</a></h3>
+    <p1>
+      Chorny:用於網路時間協定(NTP)<br/>
+      Chornyd:實際運行守護的程式或服務<br/>
+    </p1>
+
+
   目前遇到的問題:
   1.無法開始火狐瀏覽器 (environment、display no found) // 10/29<br/>
   2.目前只能使用橋接模式才能client連上server，NAT模式不行<br/>
-
+  3.SElinux 一直啟動不了selinux的MAC(不管是Enforing還是Permissive)<br/>
+  4.最新版ubuntu 沒有/boot/grub/menu.lst，只有/etc/grub2<br/>
+  5.修改文件 read only (指令mount沒用)<br/>
 
 
 
